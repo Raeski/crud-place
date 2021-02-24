@@ -7,6 +7,8 @@ import com.br.place.requests.PlacePostRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PlaceServices {
@@ -14,6 +16,9 @@ public class PlaceServices {
 
     private final PlaceRepository placeRepository;
 
+    public List<Place> listAll() {
+        return placeRepository.findAll();
+    }
 
 
     public Place save(PlacePostRequestBody placePostRequestBody) {

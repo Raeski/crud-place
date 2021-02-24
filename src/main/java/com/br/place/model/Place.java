@@ -10,7 +10,12 @@ import java.util.Date;
 @Entity
 @Data
 @Builder
+@AllArgsConstructor
 public class Place {
+
+    public Place() {
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
