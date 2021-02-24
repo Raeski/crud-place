@@ -29,4 +29,12 @@ public class PlaceController {
     public ResponseEntity<Place> save(@RequestBody PlacePostRequestBody placePostRequestBody) {
         return new ResponseEntity<>(placeServices.save(placePostRequestBody), HttpStatus.CREATED);
     }
+
+/*
+    public ResponseEntity<Void> delete(@PathVariable long id) {
+        placeServices.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+ */
+
 }

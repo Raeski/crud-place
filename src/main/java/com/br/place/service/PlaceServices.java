@@ -5,7 +5,9 @@ import com.br.place.mapper.PlaceMapper;
 import com.br.place.model.Place;
 import com.br.place.requests.PlacePostRequestBody;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -25,6 +27,12 @@ public class PlaceServices {
         return placeRepository.save(PlaceMapper.INSTANCE.toPlace(placePostRequestBody));
 
     }
+
+//    public void delete(long id) {
+//        placeRepository.delete();
+//    }
+
+
 
 
 

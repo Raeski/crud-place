@@ -3,6 +3,7 @@ package com.br.place.model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -27,8 +28,10 @@ public class Place {
 
     private String state;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date updatedAt;
 
 
