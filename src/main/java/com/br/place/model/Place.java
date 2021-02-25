@@ -28,10 +28,10 @@ public class Place {
 
     private String state;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
 
