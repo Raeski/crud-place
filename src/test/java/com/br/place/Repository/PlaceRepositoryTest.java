@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @DisplayName("Tests for Place Repository")
+@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 class PlaceRepositoryTest {
 
     @Autowired
@@ -33,6 +35,7 @@ class PlaceRepositoryTest {
         return Place.builder()
                 .name("Cidade nos EUA")
                 .city("New York")
+                .state("New York")
                 .build();
     }
 }
