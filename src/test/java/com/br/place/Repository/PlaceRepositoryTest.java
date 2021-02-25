@@ -20,13 +20,29 @@ class PlaceRepositoryTest {
     private PlaceRepository placeRepository;
 
     @Test
-    @DisplayName("Save creates place when Successful")
+    @DisplayName("Save persists place when Successful")
     void save_PersistPlace_WhenSuccessful(){
         Place place = createPlace();
         Place savedPlace = this.placeRepository.save(place);
         Assertions.assertThat(savedPlace).isNotNull();
         Assertions.assertThat(savedPlace.getId()).isNotNull();
         Assertions.assertThat(savedPlace.getName()).isEqualTo(place.getName());
+
+    }
+
+    @Test
+    @DisplayName("Save creates place when Successful")
+    void save_UpdatesPlace_WhenSuccessful(){
+        Place place = createPlace();
+        Place savedPlace = this.placeRepository.save(place);
+
+        savedPlace.setName("Teste");
+
+        Place placeUpdated = this.placeRepository.save(savedPlace);
+
+        Assertions.assertThat(placeUpdated).isNotNull();
+        Assertions.assertThat(placeUpdated.getId()).isNotNull();
+        Assertions.assertThat(placeUpdated.getName()).isEqualTo(place.getName());
 
     }
 
@@ -38,4 +54,5 @@ class PlaceRepositoryTest {
                 .state("New York")
                 .build();
     }
+
 }
